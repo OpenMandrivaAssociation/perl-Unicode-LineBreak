@@ -1,5 +1,5 @@
 %define upstream_name    Unicode-LineBreak
-%define upstream_version 1.007.520
+%define upstream_version 1.008.2
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -23,10 +23,11 @@ on plain text e-mail messages, RFC 3676 flowed format is also supported.
 
 %prep
 %setup -q -n %{upstream_name}-%{upstream_version}
+cd linebreak-c
+autoreconf -fi
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
-
 %make
 
 %check
