@@ -3,9 +3,8 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
-
-Summary:    UAX #14 Unicode 行分割アルゴリズム
+Release:    %mkrel 2
+Summary:    UAX #14 Unicode Line Breaking Algorithm
 License:    GPL+ or Artistic
 Group:      Development/Perl
 Url:        http://search.cpan.org/dist/%{upstream_name}
