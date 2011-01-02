@@ -1,9 +1,9 @@
 %define upstream_name    Unicode-LineBreak
-%define upstream_version 1.010
+%define upstream_version 1.011
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 1
 Summary:    UAX #14 Unicode Line Breaking Algorithm
 License:    GPL+ or Artistic
 Group:      Development/Perl
