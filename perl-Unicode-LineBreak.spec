@@ -1,20 +1,23 @@
 %define upstream_name    Unicode-LineBreak
 %define upstream_version 1.011
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:	2
-Summary:    UAX #14 Unicode Line Breaking Algorithm
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Unicode/%{upstream_name}-%{upstream_version}.tar.gz
+%if %{_use_internal_dependency_generator}
+%define __noautoreq 'perl\\(Unicode::LineBreak::Constants\\)'
+%endif
 
-BuildRequires: perl(Encode)
-BuildRequires: perl(MIME::Charset)
-BuildRequires: perl(Test::More)
-BuildRequires: perl-devel
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	3
+Summary:	UAX #14 Unicode Line Breaking Algorithm
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Unicode/%{upstream_name}-%{upstream_version}.tar.gz
+
+BuildRequires:	perl(Encode)
+BuildRequires:	perl(MIME::Charset)
+BuildRequires:	perl(Test::More)
+BuildRequires:	perl-devel
 
 %description
 Text::LineFold folds or unfolds lines of plain text. As it mainly focuses
@@ -26,23 +29,17 @@ cd linebreak-c
 autoreconf -fi
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 %make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc Changes README
 %{_mandir}/man3/*
-%perl_vendorlib/*
-
+%{perl_vendorlib}/*
 
