@@ -1,18 +1,18 @@
-%define upstream_name    Unicode-LineBreak
-%define upstream_version 1.011
+%define	modname	Unicode-LineBreak
+%define	modver	2012.10
 
 %if %{_use_internal_dependency_generator}
 %define __noautoreq 'perl\\(Unicode::LineBreak::Constants\\)'
 %endif
 
-Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Name:		perl-%{modname}
+Version:	%{perl_convert_version %{modver}}
+Release:	1
 Summary:	UAX #14 Unicode Line Breaking Algorithm
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Unicode/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		http://search.cpan.org/dist/%{modname}
+Source0:	http://www.cpan.org/modules/by-module/Unicode/%{modname}-%{modver}.tar.gz
 
 BuildRequires:	perl(Encode)
 BuildRequires:	perl(MIME::Charset)
@@ -24,9 +24,7 @@ Text::LineFold folds or unfolds lines of plain text. As it mainly focuses
 on plain text e-mail messages, RFC 3676 flowed format is also supported.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
-cd linebreak-c
-autoreconf -fi
+%setup -q -n %{modname}-%{modver}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -42,4 +40,3 @@ perl Makefile.PL INSTALLDIRS=vendor
 %doc Changes README
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
-
