@@ -1,5 +1,5 @@
 %define	modname	Unicode-LineBreak
-%define	modver	2012.10
+%define modver 2013.11
 
 %if %{_use_internal_dependency_generator}
 %define __noautoreq 'perl\\(Unicode::LineBreak::Constants\\)'
@@ -7,12 +7,12 @@
 
 Summary:	UAX #14 Unicode Line Breaking Algorithm
 Name:		perl-%{modname}
-Version:	%{perl_convert_version %{modver}}
-Release:	6
+Version:	%perl_convert_version %{modver}
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
-Source0:	http://www.cpan.org/modules/by-module/Unicode/%{modname}-%{modver}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Unicode/Unicode-LineBreak-%{modver}.tar.gz
 BuildRequires:	perl(Encode)
 BuildRequires:	perl(MIME::Charset)
 BuildRequires:	perl(Test::More)
@@ -39,4 +39,5 @@ perl Makefile.PL INSTALLDIRS=vendor
 %doc Changes README
 %{perl_vendorlib}/*
 %{_mandir}/man3/*
+
 
