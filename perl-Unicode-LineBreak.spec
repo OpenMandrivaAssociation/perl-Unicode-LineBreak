@@ -7,7 +7,7 @@
 
 Name:		perl-%{modname}
 Version:	%{perl_convert_version %{modver}}
-Release:	2
+Release:	3
 Summary:	UAX #14 Unicode Line Breaking Algorithm
 License:	GPL+ or Artistic
 Group:		Development/Perl
