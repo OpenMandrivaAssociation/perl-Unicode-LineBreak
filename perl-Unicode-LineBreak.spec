@@ -1,12 +1,12 @@
 %define	modname	Unicode-LineBreak
-%define modver 2018.003
+%define modver 2019.001
 
 %define __requires_exclude perl\\(Unicode::LineBreak::Constants\\)
 
 Summary:	UAX #14 Unicode Line Breaking Algorithm
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	3
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/Unicode::LineBreak
