@@ -1,5 +1,9 @@
 %define	modname	Unicode-LineBreak
 %define modver 2019.001
+%ifarch %{x86_64}
+# FIXME workaround for debuginfo bug
+%global _debugsource_template %{nil}
+%endif
 
 %define __requires_exclude perl\\(Unicode::LineBreak::Constants\\)
 
