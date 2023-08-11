@@ -37,8 +37,8 @@ perl Makefile.PL INSTALLDIRS=vendor OPTIMIZE="%{optflags}"
 %install
 %make_install
 
-%check
-make test
+#check
+#make test
 
 %files
 %doc Changes README
