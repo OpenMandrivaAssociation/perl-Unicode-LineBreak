@@ -10,6 +10,7 @@ License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/Unicode::LineBreak
 Source0:	https://www.cpan.org/modules/by-module/Unicode/%{modname}-%{version}.tar.gz
+BuildRequires:	make
 BuildRequires:	perl(Encode)
 BuildRequires:	perl(ExtUtils::MakeMaker)
 BuildRequires:	perl(MIME::Charset)
