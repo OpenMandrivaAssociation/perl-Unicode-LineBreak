@@ -5,7 +5,7 @@
 Summary:	UAX #14 Unicode Line Breaking Algorithm
 Name:		perl-%{modname}
 Version:	2019.001
-Release:	5
+Release:	6
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/Unicode::LineBreak
